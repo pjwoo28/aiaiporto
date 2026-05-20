@@ -1,0 +1,314 @@
+/* ============================================
+   GLOBAL CSS — Soft Garden Aesthetic
+   Inspired by daisies-for-daisy.netlify.app
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color Palette */
+  --cream:       #fefed2;
+  --cream-dark:  #ece5d5;
+  --parchment:   #e8dfc8;
+  --sage-light:  #c8d5b9;
+  --sage:        #8fad88;
+  --sage-dark:   #5a7a52;
+  --forest:      #2d4a27;
+  --forest-deep: #1a2e16;
+  --moss:        #3d5c35;
+  --lime-neon:   #b8f059;
+  --lime-soft:   #d4f5a0;
+  --daisy-yellow:#f5e642;
+  --blush:       #f0c8b4;
+  --sky-soft:    #c8dff0;
+  --text-dark:   #1e2d1a;
+  --text-mid:    #3d5235;
+  --text-light:  #7a9470;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing */
+  --section-gap: 7rem;
+  --container-max: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 3px; }
+
+/* Selection */
+::selection {
+  background: var(--lime-neon);
+  color: var(--forest-deep);
+}
+
+/* ============ Layout ============ */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============ Typography ============ */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+.display-title {
+  font-family: var(--font-display);
+}
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--forest);
+  color: var(--lime-neon);
+  box-shadow: 0 4px 20px rgba(45, 74, 39, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--forest-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(45, 74, 39, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--forest);
+  border: 1.5px solid var(--sage);
+}
+
+.btn-outline:hover {
+  background: var(--sage-light);
+  border-color: var(--forest);
+  transform: translateY(-2px);
+}
+
+.btn-lime {
+  background: var(--lime-neon);
+  color: var(--forest-deep);
+  font-weight: 600;
+}
+
+.btn-lime:hover {
+  background: var(--daisy-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(184, 240, 89, 0.4);
+}
+
+/* ============ Cards ============ */
+.card {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(143, 173, 136, 0.25);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(45, 74, 39, 0.12);
+  border-color: rgba(143, 173, 136, 0.5);
+}
+
+/* ============ Section Header ============ */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--lime-neon);
+  color: var(--forest-deep);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--forest);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 550px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* ============ Page Hero ============ */
+.page-hero {
+  padding: 8rem 0 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(184, 240, 89, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero-tag {
+  display: inline-block;
+  background: var(--forest);
+  color: var(--lime-neon);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  color: var(--forest);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.page-hero-sub {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-style: italic;
+}
+
+/* ============ Grid layouts ============ */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+/* ============ Decorative Elements ============ */
+.leaf-divider {
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--sage);
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--sage-light);
+  color: var(--forest);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  margin: 0.2rem;
+}
+
+/* ============ Fade-in animation ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes bloom {
+  0%   { transform: scale(0.8) rotate(-5deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg);    opacity: 1; }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ============ Responsive ============ */
+@media (max-width: 768px) {
+  :root {
+    --section-gap: 4rem;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .page-hero {
+    padding: 6rem 0 4rem;
+  }
+}

@@ -1,0 +1,241 @@
+/* Translation.css */
+
+/* ── HERO ── */
+.trans-hero {
+  background: linear-gradient(160deg, #e8f4e8 0%, var(--cream) 40%, #e8ecf8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.trans-hero__deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  opacity: 0.06;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 12rem);
+  color: var(--forest);
+  overflow: hidden;
+}
+
+.trans-hero__char {
+  animation: float 5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* ── LANGUAGE PAIRS ── */
+.lang-pairs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.lang-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.lang-pair__flag {
+  font-size: 2rem;
+}
+
+.lang-pair__text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-pair__from {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--forest);
+  font-weight: 600;
+}
+
+.lang-pair__arrow {
+  color: var(--lime-neon);
+  font-size: 1.2rem;
+}
+
+.lang-pair__to {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--sage-dark);
+  font-weight: 500;
+}
+
+/* ── PROJECTS GRID ── */
+.trans-projects-section {
+  background: var(--cream-dark);
+}
+
+.trans-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.trans-project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 2rem;
+}
+
+.trans-project__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.trans-project__emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  border-radius: 12px;
+}
+
+.trans-project__cat {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sage-dark);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.trans-project__pair {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.trans-project__title {
+  font-size: 1.2rem;
+  color: var(--forest);
+}
+
+.trans-project__desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.trans-project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+}
+
+/* ── SKILLS ── */
+.trans-skills-section {
+  position: relative;
+}
+
+.trans-skills-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #edf5e8 0%, var(--cream) 100%);
+  z-index: -1;
+}
+
+.trans-skills-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Skill bars */
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-bar__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar__track {
+  height: 8px;
+  background: var(--sage-light);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sage-dark), var(--lime-neon));
+  border-radius: 100px;
+  transition: width 1s ease;
+}
+
+/* Tools */
+.trans-tools__title {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  margin-bottom: 1rem;
+}
+
+.trans-tools__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.tool-chip {
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--forest);
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Certs */
+.cert-item {
+  padding: 0.85rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+}
+
+/* CTA */
+.trans-cta {
+  background: linear-gradient(135deg, var(--cream-dark), var(--parchment));
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .lang-pairs,
+  .trans-projects-grid,
+  .trans-skills-inner {
+    grid-template-columns: 1fr;
+  }
+}
